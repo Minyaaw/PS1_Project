@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Now Playing</title>
+        <meta name="author" content="Zeeshan Mehmood" />
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body class="student4">
+        <!--                nav bar-->
+        <nav class="navbar navbar-expand-md bg-body-tertiary sticky-top bg-dark" data-bs-theme="dark">
+            <div class="container-fluid ps-5 ">
+                <a class="navbar-brand" href="index.html"><img id="logo" src="assets/Home_assets/logo.svg"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                        aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-evenly flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link " href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Now Showing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Coming Soon</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Show Times</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Membership</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    More
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Food & Drink</a></li>
+                                    <li><a class="dropdown-item" href="#">Events</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">About Us</a></li>
+                                    <li><a class="dropdown-item" href="#">Contact Us</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+        <!--                hero section-->
+        <section>
+            <div id="hero_section">
+                <div
+                    class="container-fluid row p-5 text-center align-items-center justify-content-evenly text-md-left justify-content-md-start ">
+                    <h1 class=" col-12 col-md-8 mt-5">Experience the Best Films of 2024 </h1>
+                    <p class="d-none d-md-block col-md-10 col-lg-8 "> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ipsum
+                        dolor sit amet consequatur eaque eius et expedita minima porro quae quas quis sint.</p>
+                    <div class="col-12">
+                        <button type="button " class="btn btn-secondary col-5 col-sm-4 col-md-3 col-lg-2 col-xl-1 my-3">Book Now</button>
+                        <button type="button" class="btn btn-primary col-5 col-sm-4 col-md-3 my-3 col-lg-2 col-xl-1 mx-md-3">Join Us
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!--        now playing slider-->
+        <section class="container-fluid my-5">
+            <header class="mt-5">
+                <h2 class="text-center">NOW PLAYING</h2>
+            </header>
+            <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                    <!--first carousel-->
+                    <div class="carousel-item active">
+                        <div class="row justify-content-center  my-5">
+                            <div class="col-12 col-sm-5 col-md-3 row justify-content-center">
+                                <div class="card-design position-relative">
+                                    <img src="assets/student4/nowplaying/medium-cover.jpg" class="mw-100" alt="">
+                                    <div class="overlay">
+                                        <button href="#" class=" px-2 py-1 me-2 me-md-0 mb-md-1"><i class="fa-solid fa-play"> </i> Trailer
+                                        </button>
+                                        <button href="#" class=" px-2 py-1 ms-2 ms-md-0 mt-md-1"><i class="fa-solid fa-circle-info"></i>
+                                            More
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-none d-sm-block col-sm-5 col-md-3 row justify-content-center ">
+                                <div class="card-design position-relative">
+                                    <img src="assets/student4/nowplaying/movieposter.jpg" class="mw-100" alt="">
+                                    <div class="overlay">
+                                        <button href="#" class=" px-2 py-1 me-2 me-md-0 mb-md-1"><i class="fa-solid fa-play"> </i> Trailer
+                                        </button>
+                                        <button href="#" class=" px-2 py-1 ms-2 ms-md-0 mt-md-1"><i class="fa-solid fa-circle-info"></i>
+                                            More
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-none d-md-block col-sm-5 col-md-3 row justify-content-center ">
+                                <div class="card-design position-relative">
+                                    <img src="assets/student4/nowplaying/movieposter2.jpg" class="mw-100" alt="">
+                                    <div class="overlay">
+                                        <button href="#" class=" px-2 py-1 me-2 me-md-0 mb-md-1"><i class="fa-solid fa-play"> </i> Trailer
+                                        </button>
+                                        <button href="#" class=" px-2 py-1 ms-2 ms-md-0 mt-md-1"><i class="fa-solid fa-circle-info"></i>
+                                            More
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--second carousel-->
+                    <div class="carousel-item">
+                        <div class="row justify-content-center  my-5">
+                            <div class="col-12 col-sm-5 col-md-3 row justify-content-center">
+                                <div class="card-design position-relative">
+                                    <img src="assets/student4/nowplaying/movieposter4.jpg" class="mw-100" alt="">
+                                    <div class="overlay">
+                                        <button href="#" class=" px-2 py-1 me-2 me-md-0 mb-md-1"><i class="fa-solid fa-play"> </i> Trailer
+                                        </button>
+                                        <button href="#" class=" px-2 py-1 ms-2 ms-md-0 mt-md-1"><i class="fa-solid fa-circle-info"></i>
+                                            More
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-none d-sm-block col-sm-5 col-md-3 row justify-content-center ">
+                                <div class="card-design position-relative">
+                                    <img src="assets/student4/nowplaying/mvp5.jpg" class="mw-100" alt="">
+                                    <div class="overlay">
+                                        <button href="#" class=" px-2 py-1 me-2 me-md-0 mb-md-1"><i class="fa-solid fa-play"> </i> Trailer
+                                        </button>
+                                        <button href="#" class=" px-2 py-1 ms-2 ms-md-0 mt-md-1"><i class="fa-solid fa-circle-info"></i>
+                                            More
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-none d-md-block col-sm-5 col-md-3 row justify-content-center ">
+                                <div class="card-design position-relative">
+                                    <img src="assets/student4/nowplaying/mvp6.jpg" class="mw-100" alt="">
+                                    <div class="overlay">
+                                        <button href="#" class=" px-2 py-1 me-2 me-md-0 mb-md-1"><i class="fa-solid fa-play"> </i> Trailer
+                                        </button>
+                                        <button href="#" class=" px-2 py-1 ms-2 ms-md-0 mt-md-1"><i class="fa-solid fa-circle-info"></i>
+                                            More
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon " aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon " aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+        <!-- details-->
+        <section class="container my-5">
+            <header>
+                <h2 class="text-center">MOVIES AT STARLIGHT</h2>
+            </header>
+            <div class="row my-1 text-center">
+                <!--            main content-->
+                <div class="col-12 col-lg-8">
+                    <!--                    first movie-->
+                    <div class="row justify-content-md-evenly align-items-center single-movie my-5">
+                        <div class="col-md-5">
+                            <img class="mw-100" src="assets/student4/nowplaying/medium-cover.jpg" alt="">
+                        </div>
+                        <div class="col-12 col-md-7 text-md-left">
+                            <h3 class="mt-2 mt-md-0">Eagle</h3>
+                            <p><i class="fa-regular fa-clock"></i> 02 hrs 15 min</p>
+                            <p class="px-3 px-md-0 pe-md-1 ">Lorem ipsum dolor sit amet, consectetur adip. Dicta, voluptates.</p>
+                            <p class="mb-0"><span>Language:</span> English</p>
+                            <p class="mb-0"><span>Release Date:</span> Feb 15, 2024</p>
+                            <p><span>Genre:</span> Action</p>
+                            <div class="row justify-content-center justify-content-md-start  my-4 my-md-3">
+                                <div class="offset-1 offset-md-0 col-4 col-md-4"><p><a class="text-decoration-none p-2 trailer-btn"
+                                                                                       href="#"> <i class="fa-solid fa-play"> </i>
+                                    Trailer</a></p></div>
+                                <div class="col-4 col-md-4 text-left"><p><a class="text-decoration-none p-2 time-btn" href="#"><i
+                                    class="fa-solid fa-clock"> </i> Shows</a></p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--                    next movie-->
+                    <div class="row justify-content-md-evenly align-items-center single-movie my-5">
+                        <div class="col-md-5">
+                            <img class="mw-100" src="assets/student4/nowplaying/movieposter2.jpg" alt="">
+                        </div>
+                        <div class="col-12 col-md-7 text-md-left">
+                            <h3 class="mt-2 mt-md-0">Eagle</h3>
+                            <p><i class="fa-regular fa-clock"></i> 02 hrs 15 min</p>
+                            <p class="px-3 px-md-0 pe-md-1 ">Lorem ipsum dolor sit amet, consectetur adip. Dicta, voluptates.</p>
+                            <p class="mb-0"><span>Language:</span> English</p>
+                            <p class="mb-0"><span>Release Date:</span> Feb 15, 2024</p>
+                            <p><span>Genre:</span> Action</p>
+                            <div class="row justify-content-center justify-content-md-start  my-4 my-md-3">
+                                <div class="offset-1 offset-md-0 col-4 col-md-4"><p><a class="text-decoration-none p-2 trailer-btn"
+                                                                                       href="#"> <i class="fa-solid fa-play"> </i>
+                                    Trailer</a></p></div>
+                                <div class="col-4 col-md-4 text-left"><p><a class="text-decoration-none p-2 time-btn" href="#"><i
+                                    class="fa-solid fa-clock"> </i> Shows</a></p></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--                    next movie-->
+                    <div class="row justify-content-md-evenly align-items-center single-movie my-5">
+                        <div class="col-md-5">
+                            <img class="mw-100" src="assets/student4/nowplaying/movieposter4.jpg" alt="">
+                        </div>
+                        <div class="col-12 col-md-7 text-md-left">
+                            <h3 class="mt-2 mt-md-0">Eagle</h3>
+                            <p><i class="fa-regular fa-clock"></i> 02 hrs 15 min</p>
+                            <p class="px-3 px-md-0 pe-md-1 ">Lorem ipsum dolor sit amet, consectetur adip. Dicta, voluptates.</p>
+                            <p class="mb-0"><span>Language:</span> English</p>
+                            <p class="mb-0"><span>Release Date:</span> Feb 15, 2024</p>
+                            <p><span>Genre:</span> Action</p>
+                            <div class="row justify-content-center justify-content-md-start  my-4 my-md-3">
+                                <div class="offset-1 offset-md-0 col-4 col-md-4"><p><a class="text-decoration-none p-2 trailer-btn"
+                                                                                       href="#"> <i class="fa-solid fa-play"> </i>
+                                    Trailer</a></p></div>
+                                <div class="col-4 col-md-4 text-left"><p><a class="text-decoration-none p-2 time-btn" href="#"><i
+                                    class="fa-solid fa-clock"> </i> Shows</a></p></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--                    next movie-->
+                    <div class="row justify-content-md-evenly align-items-center single-movie my-5">
+                        <div class="col-md-5">
+                            <img class="mw-100" src="assets/student4/nowplaying/mvp5.jpg" alt="">
+                        </div>
+                        <div class="col-12 col-md-7 text-md-left">
+                            <h3 class="mt-2 mt-md-0">Eagle</h3>
+                            <p><i class="fa-regular fa-clock"></i> 02 hrs 15 min</p>
+                            <p class="px-3 px-md-0 pe-md-1 ">Lorem ipsum dolor sit amet, consectetur adip. Dicta, voluptates.</p>
+                            <p class="mb-0"><span>Language:</span> English</p>
+                            <p class="mb-0"><span>Release Date:</span> Feb 15, 2024</p>
+                            <p><span>Genre:</span> Action</p>
+                            <div class="row justify-content-center justify-content-md-start  my-4 my-md-3">
+                                <div class="offset-1 offset-md-0 col-4 col-md-4"><p><a class="text-decoration-none p-2 trailer-btn"
+                                                                                       href="#"> <i class="fa-solid fa-play"> </i>
+                                    Trailer</a></p></div>
+                                <div class="col-4 col-md-4 text-left"><p><a class="text-decoration-none p-2 time-btn" href="#"><i
+                                    class="fa-solid fa-clock"> </i> Shows</a></p></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!--            side content-->
+                <div class="d-none d-lg-block col-md-4 my-5 side-bar">
+                    <div class="mt-5 p-4">
+                        <img class="mw-100" src="assets/student4/nowplaying/mov.png" alt="">
+                    </div>
+                    <div class=" px-5">
+                        <h4 class="pb-1">Top Movies</h4>
+                    </div>
+                    <!--                    first-top-movie-->
+                    <div class="row mt-5 p-3 top-movie align-items-center">
+                        <div class="col-4"><img class="mw-100" src="assets/student4/nowplaying/medium-cover.jpg" alt=""></div>
+                        <div class="col-8">
+                            <h5>Eagle</h5>
+                            <p class="mb-0"><span>Language:</span> English</p>
+                            <p><span>Genre:</span> Action</p>
+                        </div>
+                    </div>
+                    <!--second-best-movie-->
+                    <div class="row mt-3 p-3 top-movie align-items-center">
+                        <div class="col-4"><img class="mw-100" src="assets/student4/nowplaying/mvp6.jpg" alt=""></div>
+                        <div class="col-8">
+                            <h5>Eagle</h5>
+                            <p class="mb-0"><span>Language:</span> English</p>
+                            <p><span>Genre:</span> Action</p>
+                        </div>
+                    </div>
+                    <!--third-best-movie-->
+                    <div class="row mt-3 p-3 top-movie align-items-center">
+                        <div class="col-4"><img class="mw-100" src="assets/student4/nowplaying/mvp5.jpg" alt=""></div>
+                        <div class="col-8">
+                            <h5>Eagle</h5>
+                            <p class="mb-0"><span>Language:</span> English</p>
+                            <p><span>Genre:</span> Action</p>
+                        </div>
+                    </div>
+                    <!--Recent events-->
+                    <div class=" px-5 my-5">
+                        <h4 class="pb-1">Recent Events</h4>
+                    </div>
+<!--                    first event-->
+                    <div class="row mt-5 p-3 top-movie align-items-center">
+                        <div class="col-4"><img class="mw-100" src="assets/student4/people-8168554_640.jpg" alt=""></div>
+                        <div class="col-8 text-left">
+                            <p class="mb-0"><span>Free Drinks:</span> Free drinks were given last night</p>
+
+                        </div>
+                    </div>
+                    <!--                    second event-->
+                    <div class="row mt-3 p-3 top-movie align-items-center">
+                        <div class="col-4"><img class="mw-100" src="assets/student4/people-8168554_640.jpg" alt=""></div>
+                        <div class="col-8 text-left">
+                            <p class="mb-0"><span>Free Drinks:</span> Free drinks were given last night</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+<!--        footer-->
+        <footer class="mt-5">
+            <!--            top footer-->
+            <div class="footer-above py-5">
+                <div class="row justify-content-center justify-content-md-evenly py-5 mx-2  px-sm-5 p-md-0 align-items-start ">
+                    <div class="row col-12 col-md-3 justify-content-center ">
+                        <img class="p-2 w-50 p-md-0 " src="assets/Home_assets/logo.svg" alt="">
+                        <p class="text-center text-md-justify mt-3">Lorem ipsum dolor sit amet, cotur adipisicing elit. Ab autem cum fuga fugit
+                            minus
+                            optio perferendis quas qjkkl.</p>
+                    </div>
+                    <!--           Navigation-->
+                    <div class="row col-12 col-md-2 justify-content-center my-2 my-md-0 ">
+                        <h4 class="text-center">Navigation</h4>
+                        <ul class="nav flex-column text-center mt-3">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Active</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " aria-disabled="true">Disabled</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--                social media-->
+                    <div class="row col-12 col-md-4 justify-content-center my-2 my-md-0">
+                        <h4 class="text-center">Social Media</h4>
+                        <p class="text-center fs-2 mt-3">
+                            <span><i class="fa-brands fa-facebook"></i></span>
+                            <span><i class="fa-brands fa-facebook"></i></span>
+                            <span><i class="fa-brands fa-facebook"></i></span>
+                            <span><i class="fa-brands fa-facebook"></i></span>
+                        </p>
+                        <p class="text-center text-md-justify">Get the latest updates on showtimes, events, movie releases and much more:</p>
+                        <div class="row pic justify-content-center">
+                            <div class="col-6 text-center"><img src="assets/Home_assets/app-img1.png" alt=""></div>
+                            <div class="col-6 text-center"><img src="assets/Home_assets/app-img2.png" alt=""></div>
+                        </div>
+                    </div>
+                    <!--                contact us-->
+                    <div class="row col-12 col-md-3 my-2 my-md-0">
+                        <h4 class="text-center">Contact Us</h4>
+                        <div class="mt-3 text-center">
+                            <p>
+                                <i class="fa-solid fa-envelope"></i> info@xyx.com
+                            </p>
+                            <p>
+                                <i class="fa-solid fa-phone"></i> +32 5684470
+                            </p>
+                            <p>
+                                <i class="fa-solid fa-location-dot"></i> werft 11, 2440 Geel
+                            </p>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--below footer-->
+            <div class="footer-below p-2">
+                <p class="text-center mb-0">Full Stack Essentials Project &copy; Zeeshan Mehmood</p>
+            </div>
+
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    </body>
+</html>

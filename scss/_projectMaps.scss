@@ -1,0 +1,9 @@
+// override/add Bootstraps maps
+
+// add 'purple' to the $theme-colors map
+$custom-colors: (
+  'purple': #800080
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);

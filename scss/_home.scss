@@ -1,0 +1,54 @@
+h1,h2{
+  color: $dark-yellow;
+}
+h3,h4,h5,h6{
+  color:$light-yellow;
+}
+colgroup{
+  background-color: $light-black;
+}
+.show-board{
+  background-color: $light-black;
+  border-radius: 15px;
+}
+#coming-soon{
+  background:url("../assets/Home_assets/Untitled-design.jpg") no-repeat ;
+  background-size: cover;
+  background-position: center;
+}
+.design-time{
+  background-color: $dark-yellow;
+  border-radius: 100px;
+  font-weight: normal!important;
+  flex: 0 0 91px!important;
+
+}
+.show-board{
+  span{
+    font-weight: bold;
+  }
+}
+.tab-design{
+  border: 2px solid $light-yellow!important;
+}
+.dimension-movie{
+  flex: 0 0 45px!important;
+}
+.coming-soon{
+  background-image: url("/assets/Home_assets/Untitled-design.jpg");
+}
+.temp{
+  h3{
+    color:white;
+  }
+  p{
+    a{
+      color: green;
+      &:hover,&:focus,&active{
+        color:white;
+      }
+    }
+  }
+
+}
+

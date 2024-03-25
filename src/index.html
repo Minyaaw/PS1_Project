@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>1ITF Full Stack Essentials project</title>
+
+    </head>
+    <body>
+        <!--        navbar-->
+        <nav class="navbar navbar-expand-md bg-body-tertiary sticky-top bg-dark" data-bs-theme="dark">
+            <div class="container-fluid ps-5 ">
+                <a class="navbar-brand" href="index.html"><img id="logo" src="assets/Home_assets/logo.svg" alt="starlight logo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                        aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-evenly flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="student4page1.html">Now Showing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Coming Soon</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Show Times</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Membership</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    More
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Food & Drink</a></li>
+                                    <li><a class="dropdown-item" href="#">Events</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">About Us</a></li>
+                                    <li><a class="dropdown-item" href="#">Contact Us</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!--        Carousel -->
+        <div id="carouselExampleCaptions" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true"
+                        aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="assets/Home_assets/img_23.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>First slide label</h5>
+                        <p>Some representative placeholder content for the first slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/Home_assets/img_24.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Second slide label</h5>
+                        <p>Some representative placeholder content for the second slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/Home_assets/img_26.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Third slide label</h5>
+                        <p>Some representative placeholder content for the third slide.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <!--Now Playing-->
+        <section class="container">
+            <header><h2 class="text-center my-5 ">NOW PLAYING</h2></header>
+
+            <div class="row justify-content-evenly">
+<!--                first card-->
+                <div class="card col-12 col-md-6 col-lg-3 my-3" style="width: 16rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                            content.</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">An item</li>
+                        <li class="list-group-item">A second item</li>
+                        <li class="list-group-item">A third item</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+                <!--                second card-->
+                <div class="card col-12 col-md-6 col-lg-3 my-3" style="width: 16rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                            content.</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">An item</li>
+                        <li class="list-group-item">A second item</li>
+                        <li class="list-group-item">A third item</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+                <div class="card col-12 col-md-6 col-lg-3 my-3" style="width: 16rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                            content.</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">An item</li>
+                        <li class="list-group-item">A second item</li>
+                        <li class="list-group-item">A third item</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+                <div class="card col-12 col-md-6 col-lg-3 my-3" style="width: 16rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                            content.</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">An item</li>
+                        <li class="list-group-item">A second item</li>
+                        <li class="list-group-item">A third item</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!--        Coming soon-->
+        <section id="coming-soon" class="container-fluid my-5 py-2">
+            <header class="mt-5">
+                <h2 class="text-center">COMING SOON</h2>
+            </header>
+            <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                    <!--first carousel-->
+                    <div class="carousel-item active">
+                        <div class="row justify-content-center  my-5">
+                            <div class="col-12 col-sm-5 col-md-3 row justify-content-center">
+                                <div class="card-design position-relative">
+                                    <img src="assets/student4/nowplaying/medium-cover.jpg" class="mw-100" alt="">
+                                    <div class="overlay">
+                                        <button href="#" class=" px-2 py-1 me-2 me-md-0 mb-md-1"><i class="fa-solid fa-play"> </i> Trailer
+                                        </button>
+                                        <button href="#" class=" px-2 py-1 ms-2 ms-md-0 mt-md-1"><i class="fa-solid fa-circle-info"></i>
+                                            More
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-none d-sm-block col-sm-5 col-md-3 row justify-content-center ">
+                                <div class="card-design position-relative">
+                                    <img src="assets/student4/nowplaying/movieposter.jpg" class="mw-100" alt="">
+                                    <div class="overlay">
+                                        <button href="#" class=" px-2 py-1 me-2 me-md-0 mb-md-1"><i class="fa-solid fa-play"> </i> Trailer
+                                        </button>
+                                        <button href="#" class=" px-2 py-1 ms-2 ms-md-0 mt-md-1"><i class="fa-solid fa-circle-info"></i>
+                                            More
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-none d-md-block col-sm-5 col-md-3 row justify-content-center ">
+                                <div class="card-design position-relative">
+                                    <img src="assets/student4/nowplaying/movieposter2.jpg" class="mw-100" alt="">
+                                    <div class="overlay">
+                                        <button href="#" class=" px-2 py-1 me-2 me-md-0 mb-md-1"><i class="fa-solid fa-play"> </i> Trailer
+                                        </button>
+                                        <button href="#" class=" px-2 py-1 ms-2 ms-md-0 mt-md-1"><i class="fa-solid fa-circle-info"></i>
+                                            More
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--second carousel-->
+                    <div class="carousel-item">
+                        <div class="row justify-content-center  my-5">
+                            <div class="col-12 col-sm-5 col-md-3 row justify-content-center">
+                                <div class="card-design position-relative">
+                                    <img src="assets/student4/nowplaying/movieposter4.jpg" class="mw-100" alt="">
+                                    <div class="overlay">
+                                        <button href="#" class=" px-2 py-1 me-2 me-md-0 mb-md-1"><i class="fa-solid fa-play"> </i> Trailer
+                                        </button>
+                                        <button href="#" class=" px-2 py-1 ms-2 ms-md-0 mt-md-1"><i class="fa-solid fa-circle-info"></i>
+                                            More
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-none d-sm-block col-sm-5 col-md-3 row justify-content-center ">
+                                <div class="card-design position-relative">
+                                    <img src="assets/student4/nowplaying/mvp5.jpg" class="mw-100" alt="">
+                                    <div class="overlay">
+                                        <button href="#" class=" px-2 py-1 me-2 me-md-0 mb-md-1"><i class="fa-solid fa-play"> </i> Trailer
+                                        </button>
+                                        <button href="#" class=" px-2 py-1 ms-2 ms-md-0 mt-md-1"><i class="fa-solid fa-circle-info"></i>
+                                            More
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-none d-md-block col-sm-5 col-md-3 row justify-content-center ">
+                                <div class="card-design position-relative">
+                                    <img src="assets/student4/nowplaying/mvp6.jpg" class="mw-100" alt="">
+                                    <div class="overlay">
+                                        <button href="#" class=" px-2 py-1 me-2 me-md-0 mb-md-1"><i class="fa-solid fa-play"> </i> Trailer
+                                        </button>
+                                        <button href="#" class=" px-2 py-1 ms-2 ms-md-0 mt-md-1"><i class="fa-solid fa-circle-info"></i>
+                                            More
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon " aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon " aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+
+        <!--        Show times-->
+        <section class="container">
+            <header>
+                <h2 class="text-center py-3 py-md-5">SHOW TIMES</h2>
+            </header>
+            <ul class="nav nav-pills mb-3 row justify-content-start justify-content-md-end" id="pills-tab" role="tablist">
+                <li class="nav-item col-4 col-sm-4 col-md-2 py-2 py-md-0" role="presentation">
+                    <button class="nav-link active tab-design" id="pills-first-tab" data-bs-toggle="pill" data-bs-target="#pills-first"
+                            type="button"
+                            role="tab" aria-controls="pills-first" aria-selected="true">Sat 02 Mar
+                    </button>
+                </li>
+                <li class="nav-item col-4  col-sm-4 col-md-2 py-2 py-md-0" role="presentation">
+                    <button class="nav-link tab-design" id="pills-second-tab" data-bs-toggle="pill" data-bs-target="#pills-second"
+                            type="button"
+                            role="tab" aria-controls="pills-second" aria-selected="false">Sun 03 Mar
+                    </button>
+                </li>
+                <li class="nav-item col-4 col-sm-4 col-md-2  py-2 py-md-0" role="presentation">
+                    <button class="nav-link tab-design" id="pills-third-tab" data-bs-toggle="pill" data-bs-target="#pills-third"
+                            type="button"
+                            role="tab" aria-controls="pills-third" aria-selected="false">Mon 04 Mar
+                    </button>
+                </li>
+                <li class="nav-item col-4  col-sm-4 col-md-2 py-2 py-md-0" role="presentation">
+                    <button class="nav-link tab-design" id="pills-fourth-tab" data-bs-toggle="pill" data-bs-target="#pills-fourth"
+                            type="button"
+                            role="tab" aria-controls="pills-fourth" aria-selected="false">Tue 05 Mar
+                    </button>
+                </li>
+                <li class="nav-item col-4 col-sm-4 col-md-2 py-2 py-md-0" role="presentation">
+                    <button class="nav-link tab-design" id="pills-fifth-tab" data-bs-toggle="pill" data-bs-target="#pills-fifth"
+                            type="button"
+                            role="tab" aria-controls="pills-fifth" aria-selected="false">Wed 05 Mar
+                    </button>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="pills-tabContent">
+                <!--           first tab-->
+                <div class="tab-pane fade show active" id="pills-first" role="tabpanel" aria-labelledby="pills-first-tab" tabindex="0">
+                    <!--               first movie time-->
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-12 col-md-4  p-2">
+                            <div class="show-board p-4 p-md-3 p-lg-4">
+                                <p class="row justify-content-center justify-content-md-evenly mb-0 text-center">
+                                    <span class="col-6 col-md-8">Dune: Part Two</span>
+                                    <span class="col-2 col-md-4 design-time text-center dimension-movie">2D</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-8 p-2">
+                            <div class="show-board p-4 p-md-3 p-lg-4 text-center">
+                                <p class="row justify-content-center justify-content-md-center justify-content-lg-start mb-0">
+                                    <span class="col-4 col-sm-3 col-md-3  m-1 my-lg-0 col-lg-2 design-time">11:15 am</span>
+                                    <span class="col-4 col-sm-3  col-md-3 m-1 my-lg-0 col-lg-2 design-time">04:00 pm</span>
+                                    <span class="col-4 col-sm-3 col-md-3 m-1 my-lg-0 col-lg-2 design-time">09:30 pm</span>
+                                    <span class="col-4 col-sm-3 col-md-3 m-1 my-lg-0 col-lg-2 design-time">01:45 pm</span>
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--second movie-->
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-12 col-md-4  p-2">
+                            <div class="show-board p-4 p-md-3 p-lg-4">
+                                <p class="row justify-content-center justify-content-md-evenly mb-0 text-center">
+                                    <span class="col-6 col-md-8">Jurassic Park</span>
+                                    <span class="col-2 col-md-4 design-time text-center dimension-movie">2D</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-8 p-2">
+                            <div class="show-board p-4 p-md-3 p-lg-4 text-center">
+                                <p class="row justify-content-center justify-content-md-center justify-content-lg-start mb-0">
+                                    <span class="col-4 col-sm-3 col-md-3  m-1 my-lg-0 col-lg-2 design-time">11:15 am</span>
+                                    <span class="col-4 col-sm-3  col-md-3 m-1 my-lg-0 col-lg-2 design-time">04:00 pm</span>
+                                    <span class="col-4 col-sm-3 col-md-3 m-1 my-lg-0 col-lg-2 design-time">09:30 pm</span>
+                                    <span class="col-4 col-sm-3 col-md-3 m-1 my-lg-0 col-lg-2 design-time">01:45 pm</span>
+                                    <span class="col-4 col-sm-3 col-md-3 m-1 my-lg-0 col-lg-2 design-time">09:45 pm</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--                    third movie-->
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-12 col-md-4  p-2">
+                            <div class="show-board p-4 p-md-3 p-lg-4">
+                                <p class="row justify-content-center justify-content-md-evenly mb-0 text-center">
+                                    <span class="col-6 col-md-8">Family Plan</span>
+                                    <span class="col-2 col-md-4 design-time text-center dimension-movie">2D</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-8 p-2">
+                            <div class="show-board p-4 p-md-3 p-lg-4 text-center">
+                                <p class="row justify-content-center justify-content-md-center justify-content-lg-start mb-0">
+                                    <span class="col-4 col-sm-3 col-md-3  m-1 my-lg-0 col-lg-2 design-time">11:15 am</span>
+                                    <span class="col-4 col-sm-3  col-md-3 m-1 my-lg-0 col-lg-2 design-time">04:00 pm</span>
+
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!--           second tab-->
+                <div class="tab-pane fade" id="pills-second" role="tabpanel" aria-labelledby="pills-second-tab" tabindex="0">
+
+                    <!--               first movie time-->
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-12 col-md-4  p-2">
+                            <div class="show-board p-4 p-md-3 p-lg-4">
+                                <p class="row justify-content-center justify-content-md-evenly mb-0 text-center">
+                                    <span class="col-6 col-md-8">Dune: Part Two</span>
+                                    <span class="col-2 col-md-4 design-time text-center dimension-movie">2D</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-8 p-2">
+                            <div class="show-board p-4 p-md-3 p-lg-4 text-center">
+                                <p class="row justify-content-center justify-content-md-center justify-content-lg-start mb-0">
+                                    <span class="col-4 col-sm-3 col-md-3  m-1 my-lg-0 col-lg-2 design-time">11:15 am</span>
+                                    <span class="col-4 col-sm-3  col-md-3 m-1 my-lg-0 col-lg-2 design-time">04:00 pm</span>
+                                    <span class="col-4 col-sm-3 col-md-3 m-1 my-lg-0 col-lg-2 design-time">09:30 pm</span>
+                                    <span class="col-4 col-sm-3 col-md-3 m-1 my-lg-0 col-lg-2 design-time">01:45 pm</span>
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--second movie-->
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-12 col-md-4  p-2">
+                            <div class="show-board p-4 p-md-3 p-lg-4">
+                                <p class="row justify-content-center justify-content-md-evenly mb-0 text-center">
+                                    <span class="col-6 col-md-8">Jurassic Park</span>
+                                    <span class="col-2 col-md-4 design-time text-center dimension-movie">2D</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-8 p-2">
+                            <div class="show-board p-4 p-md-3 p-lg-4 text-center">
+                                <p class="row justify-content-center justify-content-md-center justify-content-lg-start mb-0">
+                                    <span class="col-4 col-sm-3 col-md-3  m-1 my-lg-0 col-lg-2 design-time">11:15 am</span>
+                                    <span class="col-4 col-sm-3  col-md-3 m-1 my-lg-0 col-lg-2 design-time">04:00 pm</span>
+                                    <span class="col-4 col-sm-3 col-md-3 m-1 my-lg-0 col-lg-2 design-time">09:30 pm</span>
+                                    <span class="col-4 col-sm-3 col-md-3 m-1 my-lg-0 col-lg-2 design-time">01:45 pm</span>
+                                    <span class="col-4 col-sm-3 col-md-3 m-1 my-lg-0 col-lg-2 design-time">09:45 pm</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--            third tab-->
+                <div class="tab-pane fade" id="pills-third" role="tabpanel" aria-labelledby="pills-third-tab" tabindex="0">
+                    <!--                    first movie-->
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-12 col-md-4  p-2">
+                            <div class="show-board p-4 p-md-3 p-lg-4">
+                                <p class="row justify-content-center justify-content-md-evenly mb-0 text-center">
+                                    <span class="col-6 col-md-8">Dune: Part Two</span>
+                                    <span class="col-2 col-md-4 design-time text-center dimension-movie">2D</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-8 p-2">
+                            <div class="show-board p-4 p-md-3 p-lg-4 text-center">
+                                <p class="row justify-content-center justify-content-md-center justify-content-lg-start mb-0">
+                                    <span class="col-4 col-sm-3 col-md-3  m-1 my-lg-0 col-lg-2 design-time">11:15 am</span>
+                                    <span class="col-4 col-sm-3  col-md-3 m-1 my-lg-0 col-lg-2 design-time">04:00 pm</span>
+                                    <span class="col-4 col-sm-3 col-md-3 m-1 my-lg-0 col-lg-2 design-time">09:30 pm</span>
+                                    <span class="col-4 col-sm-3 col-md-3 m-1 my-lg-0 col-lg-2 design-time">01:45 pm</span>
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--                    second movie-->
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-12 col-md-4  p-2">
+                            <div class="show-board p-4 p-md-3 p-lg-4">
+                                <p class="row justify-content-center justify-content-md-evenly mb-0 text-center">
+                                    <span class="col-6 col-md-8">Loin King</span>
+                                    <span class="col-2 col-md-4 design-time text-center dimension-movie">3D</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-8 p-2">
+                            <div class="show-board p-4 p-md-3 p-lg-4 text-center">
+                                <p class="row justify-content-center justify-content-md-center justify-content-lg-start mb-0">
+                                    <span class="col-4 col-sm-3 col-md-3  m-1 my-lg-0 col-lg-2 design-time">11:15 am</span>
+                                    <span class="col-4 col-sm-3  col-md-3 m-1 my-lg-0 col-lg-2 design-time">04:00 pm</span>
+                                    <span class="col-4 col-sm-3 col-md-3 m-1 my-lg-0 col-lg-2 design-time">09:30 pm</span>
+                                    <span class="col-4 col-sm-3 col-md-3 m-1 my-lg-0 col-lg-2 design-time">01:45 pm</span>
+                                    <span class="col-4 col-sm-3 col-md-3 m-1 my-lg-0 col-lg-2 design-time">11:45 pm</span>
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--                    third movie-->
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-12 col-md-4  p-2">
+                            <div class="show-board p-4 p-md-3 p-lg-4">
+                                <p class="row justify-content-center justify-content-md-evenly mb-0 text-center">
+                                    <span class="col-6 col-md-8">Jurassic Park</span>
+                                    <span class="col-2 col-md-4 design-time text-center dimension-movie">2D</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-8 p-2">
+                            <div class="show-board p-4 p-md-3 p-lg-4 text-center">
+                                <p class="row justify-content-center justify-content-md-center justify-content-lg-start mb-0">
+                                    <span class="col-4 col-sm-3 col-md-3  m-1 my-lg-0 col-lg-2 design-time">11:15 am</span>
+
+                                    <span class="col-4 col-sm-3 col-md-3 m-1 my-lg-0 col-lg-2 design-time">11:45 pm</span>
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--                    fourth movie-->
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-12 col-md-4  p-2">
+                            <div class="show-board p-4 p-md-3 p-lg-4">
+                                <p class="row justify-content-center justify-content-md-evenly mb-0 text-center">
+                                    <span class="col-6 col-md-8">Troy</span>
+                                    <span class="col-2 col-md-4 design-time text-center dimension-movie">2D</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-8 p-2">
+                            <div class="show-board p-4 p-md-3 p-lg-4 text-center">
+                                <p class="row justify-content-center justify-content-md-center justify-content-lg-start mb-0">
+                                    <span class="col-4 col-sm-3 col-md-3  m-1 my-lg-0 col-lg-2 design-time">11:15 am</span>
+                                    <span class="col-4 col-sm-3  col-md-3 m-1 my-lg-0 col-lg-2 design-time">04:00 pm</span>
+                                    <span class="col-4 col-sm-3 col-md-3 m-1 my-lg-0 col-lg-2 design-time">09:30 pm</span>
+
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--           fourth tab-->
+                <div class="tab-pane fade" id="pills-fourth" role="tabpanel" aria-labelledby="pills-fourth-tab" tabindex="0">
+                    <!--               first movie time-->
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-12 col-md-4  p-2">
+                            <div class="show-board p-4 p-md-3 p-lg-4">
+                                <p class="row justify-content-center justify-content-md-evenly mb-0 text-center">
+                                    <span class="col-6 col-md-8">Dune: Part Two</span>
+                                    <span class="col-2 col-md-4 design-time text-center dimension-movie">2D</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-8 p-2">
+                            <div class="show-board p-4 p-md-3 p-lg-4 text-center">
+                                <p class="row justify-content-center justify-content-md-center justify-content-lg-start mb-0">
+                                    <span class="col-4 col-sm-3 col-md-3  m-1 my-lg-0 col-lg-2 design-time">11:15 am</span>
+                                    <span class="col-4 col-sm-3  col-md-3 m-1 my-lg-0 col-lg-2 design-time">04:00 pm</span>
+                                    <span class="col-4 col-sm-3 col-md-3 m-1 my-lg-0 col-lg-2 design-time">09:30 pm</span>
+                                    <span class="col-4 col-sm-3 col-md-3 m-1 my-lg-0 col-lg-2 design-time">01:45 pm</span>
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--second movie-->
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-12 col-md-4  p-2">
+                            <div class="show-board p-4 p-md-3 p-lg-4">
+                                <p class="row justify-content-center justify-content-md-evenly mb-0 text-center">
+                                    <span class="col-6 col-md-8">Jurassic Park</span>
+                                    <span class="col-2 col-md-4 design-time text-center dimension-movie">2D</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-8 p-2">
+                            <div class="show-board p-4 p-md-3 p-lg-4 text-center">
+                                <p class="row justify-content-center justify-content-md-center justify-content-lg-start mb-0">
+                                    <span class="col-4 col-sm-3 col-md-3  m-1 my-lg-0 col-lg-2 design-time">11:15 am</span>
+                                    <span class="col-4 col-sm-3  col-md-3 m-1 my-lg-0 col-lg-2 design-time">04:00 pm</span>
+                                    <span class="col-4 col-sm-3 col-md-3 m-1 my-lg-0 col-lg-2 design-time">09:30 pm</span>
+                                    <span class="col-4 col-sm-3 col-md-3 m-1 my-lg-0 col-lg-2 design-time">01:45 pm</span>
+                                    <span class="col-4 col-sm-3 col-md-3 m-1 my-lg-0 col-lg-2 design-time">09:45 pm</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--                    third movie-->
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-12 col-md-4  p-2">
+                            <div class="show-board p-4 p-md-3 p-lg-4">
+                                <p class="row justify-content-center justify-content-md-evenly mb-0 text-center">
+                                    <span class="col-6 col-md-8">Family Plan</span>
+                                    <span class="col-2 col-md-4 design-time text-center dimension-movie">2D</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-8 p-2">
+                            <div class="show-board p-4 p-md-3 p-lg-4 text-center">
+                                <p class="row justify-content-center justify-content-md-center justify-content-lg-start mb-0">
+                                    <span class="col-4 col-sm-3 col-md-3  m-1 my-lg-0 col-lg-2 design-time">11:15 am</span>
+                                    <span class="col-4 col-sm-3  col-md-3 m-1 my-lg-0 col-lg-2 design-time">04:00 pm</span>
+
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--            fifth tab-->
+                <div class="tab-pane fade" id="pills-fifth" role="tabpanel" aria-labelledby="pills-fifth-tab" tabindex="0">
+                    <!--               first movie time-->
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-12 col-md-4  p-2">
+                            <div class="show-board p-4 p-md-3 p-lg-4">
+                                <p class="row justify-content-center justify-content-md-evenly mb-0 text-center">
+                                    <span class="col-6 col-md-8">Dune: Part Two</span>
+                                    <span class="col-2 col-md-4 design-time text-center dimension-movie">2D</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-8 p-2">
+                            <div class="show-board p-4 p-md-3 p-lg-4 text-center">
+                                <p class="row justify-content-center justify-content-md-center justify-content-lg-start mb-0">
+                                    <span class="col-4 col-sm-3 col-md-3  m-1 my-lg-0 col-lg-2 design-time">11:15 am</span>
+                                    <span class="col-4 col-sm-3  col-md-3 m-1 my-lg-0 col-lg-2 design-time">04:00 pm</span>
+                                    <span class="col-4 col-sm-3 col-md-3 m-1 my-lg-0 col-lg-2 design-time">09:30 pm</span>
+                                    <span class="col-4 col-sm-3 col-md-3 m-1 my-lg-0 col-lg-2 design-time">01:45 pm</span>
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--second movie-->
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-12 col-md-4  p-2">
+                            <div class="show-board p-4 p-md-3 p-lg-4">
+                                <p class="row justify-content-center justify-content-md-evenly mb-0 text-center">
+                                    <span class="col-6 col-md-8">Jurassic Park</span>
+                                    <span class="col-2 col-md-4 design-time text-center dimension-movie">2D</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-8 p-2">
+                            <div class="show-board p-4 p-md-3 p-lg-4 text-center">
+                                <p class="row justify-content-center justify-content-md-center justify-content-lg-start mb-0">
+                                    <span class="col-4 col-sm-3 col-md-3  m-1 my-lg-0 col-lg-2 design-time">11:15 am</span>
+                                    <span class="col-4 col-sm-3  col-md-3 m-1 my-lg-0 col-lg-2 design-time">04:00 pm</span>
+                                    <span class="col-4 col-sm-3 col-md-3 m-1 my-lg-0 col-lg-2 design-time">09:30 pm</span>
+                                    <span class="col-4 col-sm-3 col-md-3 m-1 my-lg-0 col-lg-2 design-time">01:45 pm</span>
+                                    <span class="col-4 col-sm-3 col-md-3 m-1 my-lg-0 col-lg-2 design-time">09:45 pm</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--        latest news-->
+        <section class="container">
+            <header><h2 class="text-center py-3 py-md-5">LATEST NEWS</h2></header>
+            <div class="row justify-content-center align-items-center">
+                <div class="col-12 col-md-6">
+                    <h4>Star Light Theater Exclusive</h4>
+                    <h3>Be Our Member & Get Sweet Gifts</h3>
+                    <p class="text-justify pt-2 ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda blanditiis consequatur
+                        et, eum ipsum magnam magni
+                        molestias mollitia necessitatibus, nemo pariatur quae quibusdam repudiandae sunt velit. Aliquam debitis doloremque
+                        et harum minus molestias officia quibusdam voluptas voluptatum? At culpa ducimus nesciunt officia quos sed sequi
+                        tempora voluptatibus! </p>
+                    <div class="row justify-content-start mb-4">
+                        <button type="button" class="btn btn-primary btn-sm col-5 col-sm-3 m-2 ">Get Tickets</button>
+                        <button type="button" class="btn btn-secondary btn-sm col-5 col-sm-3 m-2">Learn More</button>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <img class="mw-100 " src="assets/Home_assets/pivdd.jpg" alt="">
+                </div>
+            </div>
+        </section>
+        <!--        footer-->
+        <footer class="mt-5">
+<!--            top footer-->
+            <div class="footer-above py-5">
+                <div class="row justify-content-center justify-content-md-evenly py-5 mx-2  px-sm-5 p-md-0 align-items-start ">
+                    <div class="row col-12 col-md-3 justify-content-center ">
+                        <img class="p-2 w-50 p-md-0 " src="assets/Home_assets/logo.svg" alt="">
+                        <p class="text-center text-md-justify mt-3">Lorem ipsum dolor sit amet, cotur adipisicing elit. Ab autem cum fuga fugit
+                            minus
+                            optio perferendis quas qjkkl.</p>
+                    </div>
+                    <!--           Navigation-->
+                    <div class="row col-12 col-md-2 justify-content-center my-2 my-md-0 ">
+                        <h4 class="text-center">Navigation</h4>
+                        <ul class="nav flex-column text-center mt-3">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Active</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " aria-disabled="true">Disabled</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--                social media-->
+                    <div class="row col-12 col-md-4 justify-content-center my-2 my-md-0">
+                        <h4 class="text-center">Social Media</h4>
+                        <p class="text-center fs-2 mt-3">
+                            <span><i class="fa-brands fa-facebook"></i></span>
+                            <span><i class="fa-brands fa-facebook"></i></span>
+                            <span><i class="fa-brands fa-facebook"></i></span>
+                            <span><i class="fa-brands fa-facebook"></i></span>
+                        </p>
+                        <p class="text-center text-md-justify">Get the latest updates on showtimes, events, movie releases and much more:</p>
+                        <div class="row pic justify-content-center">
+                            <div class="col-6 text-center"><img src="assets/Home_assets/app-img1.png" alt=""></div>
+                            <div class="col-6 text-center"><img src="assets/Home_assets/app-img2.png" alt=""></div>
+                        </div>
+                    </div>
+                    <!--                contact us-->
+                    <div class="row col-12 col-md-3 my-2 my-md-0">
+                        <h4 class="text-center">Contact Us</h4>
+                        <div class="mt-3 text-center">
+                            <p>
+                                <i class="fa-solid fa-envelope"></i> info@xyx.com
+                            </p>
+                            <p>
+                                <i class="fa-solid fa-phone"></i> +32 5684470
+                            </p>
+                            <p>
+                                <i class="fa-solid fa-location-dot"></i> werft 11, 2440 Geel
+                            </p>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<!--below footer-->
+            <div class="footer-below p-2">
+                <p class="text-center mb-0">Web design advance project &copy;2024</p>
+            </div>
+
+        </footer>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <!--custom scripts ONLY external links to studentX.js-->
+    </body>
+</html>
