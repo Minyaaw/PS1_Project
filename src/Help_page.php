@@ -11,12 +11,27 @@ if (!isset($_SESSION["username"])) {
 // Include the database connection file
 require_once 'Db.php';
 
-// Retrieve the 5 latest post contents from the taskboard table
+
+$username = $_SESSION["username"];
+// Create a parameterized query to avoid SQL injection
+$stmt = $conn->prepare("SELECT studentImg FROM Student WHERE studentUsername = ?");
+$stmt->bind_param("s", $username);
+$stmt->execute();
+$resultImg = $stmt->get_result();
+
+if ($resultImg->num_rows > 0) {
+    $resultImgRow = $resultImg->fetch_assoc();
+    $studentImg = $resultImgRow['studentImg']; // Get the student image
+}
+$stmt->close(); // Close the statement
+
+
 $query1 = "
 SELECT 
     hb.helpPostContent, 
     hb.helpPostDate, 
-    s.studentName AS studentName
+    s.studentName AS studentName,
+    hb.helpPostStudentResp
 FROM 
     HelpBoard hb
 INNER JOIN 
@@ -34,11 +49,13 @@ while ($row = mysqli_fetch_assoc($result1)) {
     $helpPost = array(
         'helpPostContent' => $row['helpPostContent'],
         'helpPostDate' => $row['helpPostDate'],
-        'studentName' => $row['studentName']
+        'studentName' => $row['studentName'],
+        'helpPostStudentResp' => $row['helpPostStudentResp']
     );
     $helpPosts[] = $helpPost;
 }
 
+// Retrieve the 5 latest post contents from the taskboard table
 $query2 = "
 SELECT 
     tb.taskPostContent, 
@@ -225,7 +242,6 @@ function getDayClass($currentDay, $dayOfWeek, $daysWithPosts) {
 
         #profile-pic {
             border-radius:50%;
-            background-image: url("assets/6185077.jpg");
             background-position:center;
             background-size:cover;
         }
@@ -254,7 +270,7 @@ function getDayClass($currentDay, $dayOfWeek, $daysWithPosts) {
             <div class="d-flex justify-content-center py-5">
                 <!-- profile text-->
                 <div class="col-md-10 d-flex justify-content-center">
-                    <div class="col-md-4 p-0 profile-pic"  id="profile-pic">
+                    <div class="col-md-4 p-0 profile-pic" id="profile-pic" style="background-image: url(<?php echo htmlspecialchars($resultImgRow['studentImg'], ENT_QUOTES, 'UTF-8'); ?>);">
                     </div>
                     <div class="d-flex align-items-center px-3">
                         <div>
@@ -331,48 +347,113 @@ function getDayClass($currentDay, $dayOfWeek, $daysWithPosts) {
 
         </header>
 
+        <?php echo json_encode($helpPosts); ?>
         <!-- post section -->
-        <div>
-            <?php echo json_encode($helpPosts); ?>
-            <?php
-            for ($i = 0; $i <= count($helpPosts)-1; $i++) {
-                echo '<div class="student-post">';
-                echo '<div class="pfp-post">';
-                echo '<img src="../scss/student1/images/harvey.jpeg" alt="">';
-                echo '</div>';
+        <div class="d-flex ">
+            <div class="col-9">
+                <?php
+                for ($i = 0; $i <= count($helpPosts)-1; $i++) {
+                    echo '<div class="student-post">';
+                    echo '<div class="pfp-post">';
+                    echo '<img src="../scss/student1/images/harvey.jpeg" alt="">';
+                    echo '</div>';
 
-                echo '<div class="content-post">';
-                echo '<div class="name-hour-post">';
+                    echo '<div class="content-post">';
+                    echo '<div class="name-hour-post">';
 
-                echo "<h3>";
-                $name = json_encode($helpPosts[$i]['studentName']);
-                echo str_replace('"', '', $name);
-                echo "</h3>";
+                    echo "<h3>";
+                    $name = json_encode($helpPosts[$i]['studentName']);
+                    echo str_replace('"', '', $name);
+                    echo "</h3>";
 
-                echo "<p>";
-                $date = json_encode($helpPosts[$i]['helpPostDate']);
-                echo str_replace('"', '', $date);
-                echo "</p>";
+                    echo "<p>";
+                    $date = json_encode($helpPosts[$i]['helpPostDate']);
+                    echo str_replace('"', '', $date);
+                    echo "</p>";
 
-                echo "</div>";
+                    echo "</div>";
 
-                echo '<div class="mt-2">';
-                $content = json_encode($helpPosts[$i]['helpPostContent']);
-                echo str_replace('"', '', $content);
-                echo '</div>';
+                    echo '<div class="mt-2">';
+                    $content = json_encode($helpPosts[$i]['helpPostContent']);
+                    echo str_replace('"', '', $content);
+                    echo '</div>';
 
-                echo '<div class="liking mt-2">';
-                echo '<button class="like-btn me-2"><i class="fa-solid fa-heart"></i></button>';
-                echo '<button class="like-btn"><i class="fa-solid fa-comment"></i></button>';
-                echo '</div>';
+                    if ($helpPosts[$i]['helpPostStudentResp'] == null) {
+                        echo '<div class="mt-2">';
+                        echo '<button class="btn-help-request" onclick="give_Help('."'" .$_SESSION["username"]."'". "," . $i . ')">I want to help!</button>';
+                        echo '</div>';
+                    } else {
+                        echo '<div class="mt-2">';
 
-                echo '</div>';
+                        $stmt = $conn->prepare("SELECT studentName FROM Student WHERE studentId = ?");
 
-                echo '</div>';
-            }
-            ?>
+                        $stmt->bind_param("s", $helpPosts[$i]['helpPostStudentResp']);
+                        $stmt->execute();
+                        $resultName  = $stmt->get_result();
+
+                        if ($resultName->num_rows > 0) {
+                            $resultNameRow = $resultName->fetch_assoc();
+                            $studentName = $resultNameRow['studentName']; // Get the student image
+                        }
+                        $stmt->close(); // Close the statement
+
+
+                        echo '<p class="btn-help-request" style="font-size: inherit; font-weight: inherit; color: black; border: 1px solid #2DC4B6; background-color: rgba(45, 196, 182, 0.1)">'. $studentName .' is helping!</p>';
+
+                        echo '</div>';
+                    }
+
+                    echo '</div>';
+
+                    echo '</div>';
+                }
+                ?>
+            </div>
+
+            <div class="col-3 p-0">
+                <div class="announcements">
+                    <h1>Event Example 🎭</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem pariatur, voluptatibus recusandae at culpa error ducimus, eos consequatur non reprehenderit perspiciatis. Quisquam, doloremque recusandae! Ratione, tempora. Quisquam impedit porro voluptatem!</p>
+                    <button class="btn-announc">Check me</button>
+                </div>
+
+                <div class="announcements announcements-blue mt-4">
+                    <h1>Message from Us 🎉</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem pariatur, voluptatibus recusandae at culpa error ducimus, eos consequatur non reprehenderit perspiciatis.</p>
+                </div>
+
+                <div class="announcements-empty mt-4">
+                    <span>Nothing else to see here for today...</span>
+                    <p>😊</p>
+                </div>
+            </div>
         </div>
     </main>
 </div>
 </body>
+
+<script>
+    function give_Help(username, HelpId) {
+        // Use AJAX to send the username to the backend endpoint
+        $.ajax({
+            url: 'update_help.php', // Endpoint to handle the request
+            type: 'POST', // HTTP method
+            data: { username: username, HelpId: HelpId+1 }, // Data to send
+            success: function (response) { // Callback for successful request
+                // Parse the JSON response
+                let res = JSON.parse(response);
+
+                if (res.status === 'success') {
+                    console.log("Help update successful");
+                    // Add further handling, like updating the UI or giving user feedback
+                } else {
+                    console.error("Error updating help: " + res.message);
+                }
+            },
+            error: function (xhr, status, error) { // Callback for failed request
+                console.error("AJAX error: " + status + ", " + error);
+            }
+        });
+    }
+</script>
 </html>

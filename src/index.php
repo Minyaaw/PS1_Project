@@ -10,11 +10,27 @@ if (!isset($_SESSION["username"])) {
 // Include the database connection file
 require_once 'Db.php';
 
+
+$username = $_SESSION["username"];
+// Create a parameterized query to avoid SQL injection
+$stmt = $conn->prepare("SELECT studentImg FROM Student WHERE studentUsername = ?");
+$stmt->bind_param("s", $username);
+$stmt->execute();
+$resultImg = $stmt->get_result();
+
+if ($resultImg->num_rows > 0) {
+        $resultImgRow = $resultImg->fetch_assoc();
+        $studentImg = $resultImgRow['studentImg']; // Get the student image
+    }
+    $stmt->close(); // Close the statement
+
+
 // Retrieve the 5 latest post contents from the taskboard table
 $query = "
 SELECT 
     tb.taskPostContent, 
     tb.taskPostDate, 
+    tb.taskPostImg,
     t.taskObjective AS taskName, 
     s.studentName AS studentName
 FROM 
@@ -36,6 +52,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     $post = array(
         'taskPostContent' => $row['taskPostContent'],
         'taskPostDate' => $row['taskPostDate'],
+        'taskPostImg' => $row['taskPostImg'],
         'taskName' => $row['taskName'],
         'studentName' => $row['studentName']
     );
@@ -197,7 +214,6 @@ function getDayClass($currentDay, $dayOfWeek, $daysWithPosts) {
 
         #profile-pic {
             border-radius:50%;
-            background-image: url("assets/6185077.jpg");
             background-position:center;
             background-size:cover;
         }
@@ -226,9 +242,9 @@ function getDayClass($currentDay, $dayOfWeek, $daysWithPosts) {
             <div class="d-flex justify-content-center py-5">
                 <!-- profile text-->
                 <div class="col-md-10 d-flex justify-content-center">
-                    <div class="col-md-4 p-0 profile-pic"  id="profile-pic">
+                    <div class="col-md-4 p-0 profile-pic" id="profile-pic" style="background-image: url(<?php echo htmlspecialchars($resultImgRow['studentImg'], ENT_QUOTES, 'UTF-8'); ?>);">
                     </div>
-                    <div class="d-flex align-items-center px-3">
+                <div class="d-flex align-items-center px-3">
                         <div>
                             <p class="m-0 bold"> <?php echo $_SESSION["username"] ?></php> </p>
                             <p>@studentnumber</p>
@@ -304,44 +320,76 @@ function getDayClass($currentDay, $dayOfWeek, $daysWithPosts) {
         </header>
 
         <!-- post section -->
-        <div>
-            <?php echo json_encode($posts); ?>
+        <?php echo json_encode($posts); ?>
 
-            <?php
-            for ($i = 0; $i <= count($posts)-1; $i++) {
-                echo '<div class="student-post">';
-                echo '<div class="pfp-post">';
-                echo '<img src="../scss/student1/images/harvey.jpeg" alt="">';
-                echo '</div>';
+        <?php echo json_encode($resultImgRow['studentImg']); ?>
+        <div class="d-flex ">
+            <div class="col-9">
+                <?php
+                for ($i = 0; $i <= count($posts)-1; $i++) {
+                    echo '<div class="student-post">';
+                    echo '<div class="pfp-post">';
+                    echo '<img src="../scss/student1/images/harvey.jpeg" alt="">';
+                    echo '</div>';
 
-                echo '<div class="content-post">';
-                echo '<div class="name-hour-post">';
+                    echo '<div class="content-post">';
+                    echo '<div class="name-hour-post">';
 
-                echo "<h3>";
-                $name = json_encode($posts[$i]['studentName']);
-                echo str_replace('"', '', $name);
-                echo "</h3>";
+                    echo "<h3>";
+                    $name = json_encode($posts[$i]['studentName']);
+                    echo str_replace('"', '', $name);
+                    echo "</h3>";
 
-                echo "<p>";
-                $date = json_encode($posts[$i]['taskPostDate']);
-                echo str_replace('"', '', $date);
-                echo "</p>";
+                    echo "<p>";
+                    $date = json_encode($posts[$i]['taskPostDate']);
+                    echo str_replace('"', '', $date);
+                    echo "</p>";
 
-                echo "</div>";
-                echo '<div class="mt-2">';
-                $content = json_encode($posts[$i]['taskPostContent']);
-                echo str_replace('"', '', $content);
-                echo '</div>';
+                    echo "</div>";
+                    echo '<div class="mt-2">';
+                    $content = json_encode($posts[$i]['taskPostContent']);
+                    echo str_replace('"', '', $content);
 
-                echo '<div class="liking mt-2">';
-                echo '<button class="like-btn me-2"><i class="fa-solid fa-heart"></i></button>';
-                echo '<button class="like-btn"><i class="fa-solid fa-comment"></i></button>';
-                echo '</div>';
-                echo '</div>';
-                echo '</div>';
-            }
-            ?>
+                    if ($posts[$i]['taskPostImg'] != null) {
+                        echo "<img ";
+                        echo "class='img-post mt-2' ";
+                        echo 'src="';
+                        echo $posts[$i]['taskPostImg'];
+                        echo '">';
+                    }
+
+                    echo '</div>';
+
+                    echo '<div class="liking mt-2">';
+                    echo '<button class="like-btn me-2"><i class="fa-solid fa-heart"></i></button>';
+                    echo '<button class="like-btn"><i class="fa-solid fa-comment"></i></button>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                }
+                ?>
+            </div>
+
+            <div class="col-3 p-0">
+                <div class="announcements">
+                    <h1>Event Example 🎭</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem pariatur, voluptatibus recusandae at culpa error ducimus, eos consequatur non reprehenderit perspiciatis. Quisquam, doloremque recusandae! Ratione, tempora. Quisquam impedit porro voluptatem!</p>
+                    <button class="btn-announc">Check me</button>
+                </div>
+
+                <div class="announcements announcements-blue mt-4">
+                    <h1>Message from Us 🎉</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem pariatur, voluptatibus recusandae at culpa error ducimus, eos consequatur non reprehenderit perspiciatis.</p>
+                </div>
+
+                <div class="announcements-empty mt-4">
+                    <span>Nothing else to see here for today...</span>
+                    <p>😊</p>
+                </div>
+            </div>
         </div>
+
+
     </main>
 </div>
 </body>
