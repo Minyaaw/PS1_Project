@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["username"] = $username;
 
         // Redirect to the home page or any other page
-        header("Location: welcome.php");
+        header("Location: index.php");
         exit();
     } else {
         // Username and password do not match
@@ -46,14 +46,15 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 <div class="login-container">
-    <h2>Login</h2>
+    <h2>Welcome!</h2>
     <form id="login-form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
         <input type="text" id="username" name="username" placeholder="Username" required>
         <input type="password" id="password" name="password" placeholder="Password" required>
-        <button type="submit">Login</button>
+        <button type="submit" class="log-button">Login</button>
     </form>
     <p id="error-message" class="error"></p>
 </div>
