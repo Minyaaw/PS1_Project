@@ -123,3 +123,29 @@
   display: flex;
   place-content: end;
 }
+
+.title-rules{
+  display: flex;
+  width: 400px;
+  height: fit-content;
+  color: #2DC4B6;
+  background-color: white;
+  border: solid 1px #2DC4B6;
+  text-align: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 32px;
+  padding-right: 32px;
+  border-radius: 18px 18px 0px 0px;
+}
+.content-rules{
+  width: 400px;
+  height: fit-content;
+  background-color: #2DC4B6;
+  border-radius: 0px 0px 18px 18px;
+  text-align: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 32px;
+  padding-right: 32px;
+}
